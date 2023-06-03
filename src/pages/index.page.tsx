@@ -11,10 +11,12 @@ import {
 import Head from "next/head";
 import Link from "next/link";
 import { useCurrentPage } from "./hook/useCurrentPage";
+import { useFocus } from "~/hooks";
 
 export default function Home() {
   const { event, isFocus, search, data, isFetching, error, debounceValue } =
     useCurrentPage();
+  const ref = useFocus();
 
   return (
     <>
@@ -51,6 +53,7 @@ export default function Home() {
               outlineOffset: 1,
             }}
             pl="28px"
+            ref={ref}
             rounded="10px"
             value={search}
             onChange={event.handleChange}
