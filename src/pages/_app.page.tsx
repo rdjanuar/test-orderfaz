@@ -5,13 +5,8 @@ import {
   QueryClientProvider,
 } from "@tanstack/react-query";
 import type { AppProps } from "next/app";
+import { LoadingProgressProvider } from "~/components";
 import themes from "~/themes";
-import {
-  LoadingProgressProvider,
-  useLoadingProgress,
-} from "./components/progress";
-import { useEffect } from "react";
-import { Router } from "next/router";
 
 const queryClient = new QueryClient({
   defaultOptions: {
