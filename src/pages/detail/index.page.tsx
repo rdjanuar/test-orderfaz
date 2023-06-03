@@ -47,7 +47,7 @@ const Detail = () => {
         </Text>
       </Button>
       <VStack mt="50px" align="start">
-        <HStack position="relative">
+        <HStack position="relative" flexWrap="wrap">
           <Heading fontSize="48px" lineHeight="57.28px">
             {detailData?.[0].name.common!}
           </Heading>
@@ -57,11 +57,8 @@ const Detail = () => {
             alt={detailData?.[0].flags.alt as string}
             style={{
               objectFit: "cover",
-              position: "absolute",
-              top: 15,
               width: 46,
               height: 30,
-              right: -55,
             }}
             width={46}
             height={30}
