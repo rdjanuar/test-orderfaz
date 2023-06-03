@@ -109,6 +109,9 @@ export default function Home() {
                     }`}
                     justifyContent="start"
                     bg="transparent"
+                    _active={{
+                      bg: "transparent",
+                    }}
                     px="25px"
                     h="18px"
                     _pressed={{
@@ -141,6 +144,7 @@ export default function Home() {
                 alignItems="center"
                 h="71px"
                 fontSize="18px"
+                px="25px"
                 lineHeight="21.48px"
                 color="rgba(255, 0, 0, 1)"
               >
