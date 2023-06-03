@@ -47,7 +47,7 @@ const Detail = () => {
         </Text>
       </Button>
       <VStack mt="50px" align="start">
-        <HStack>
+        <HStack position="relative">
           <Heading fontSize="48px" lineHeight="57.28px">
             {detailData?.[0].name.common!}
           </Heading>
@@ -57,7 +57,9 @@ const Detail = () => {
             alt={detailData?.[0].flags.alt as string}
             style={{
               objectFit: "contain",
-              marginTop: 15,
+              position: "absolute",
+              top: 22,
+              right: -55,
             }}
             width={46}
             height={30}
@@ -69,6 +71,9 @@ const Detail = () => {
               key={val}
               bg="#8DD4CC"
               color="white"
+              display="flex"
+              justifyContent="center"
+              textAlign="center"
               rounded="50px"
               fontSize="12px"
               lineHeight="14.32px"
