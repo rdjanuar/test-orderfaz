@@ -148,7 +148,9 @@ const Detail = () => {
               <Text fontSize="18px" fontWeight="normal" lineHeight="21.48px">
                 Capital:{" "}
                 <chakra.span fontWeight="medium">
-                  {detailData?.[0].capital.join(", ")}
+                  {detailData?.[0]?.capital
+                    ? detailData?.[0]?.capital?.join(", ")
+                    : "-"}
                 </chakra.span>
               </Text>
               <Text fontSize="18px" fontWeight="normal" lineHeight="21.48px">
