@@ -6,6 +6,12 @@ import {
 } from "@tanstack/react-query";
 import type { AppProps } from "next/app";
 import themes from "~/themes";
+import {
+  LoadingProgressProvider,
+  useLoadingProgress,
+} from "./components/progress";
+import { useEffect } from "react";
+import { Router } from "next/router";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,7 +28,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <ChakraProvider theme={themes}>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
-          <Component {...pageProps} />
+          <LoadingProgressProvider>
+            <Component {...pageProps} />
+          </LoadingProgressProvider>
         </Hydrate>
       </QueryClientProvider>
     </ChakraProvider>
