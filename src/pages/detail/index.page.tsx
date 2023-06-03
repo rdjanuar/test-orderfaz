@@ -56,16 +56,18 @@ const Detail = () => {
             src={detailData?.[0].flags.png!}
             alt={detailData?.[0].flags.alt as string}
             style={{
-              objectFit: "contain",
+              objectFit: "cover",
               position: "absolute",
-              top: 22,
+              top: 15,
+              width: 46,
+              height: 30,
               right: -55,
             }}
             width={46}
             height={30}
           />
         </HStack>
-        <HStack>
+        <HStack flexWrap="wrap">
           {detailData?.[0].altSpellings.map((val) => (
             <Tag
               key={val}
